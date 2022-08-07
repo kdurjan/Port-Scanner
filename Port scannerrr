@@ -1,0 +1,30 @@
+
+
+import socket # for connecting
+
+
+
+
+
+
+
+import socket
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server = 'pythonprograming.net'
+
+def pscan(port):
+
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)# I put newly
+        s.connect((server, port))
+        s.settimeout(0.1)
+        return True
+    except:
+        return False
+
+for x in range(20,26):
+    if pscan(x):
+        print('Port', x,'is open!!!!!! Assault this objective')
+    else:
+        print('Port',x,'is closed')
+
